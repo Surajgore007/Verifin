@@ -1,0 +1,73 @@
+# ClaimCourt Deterministic Rules and Thresholds
+# All numeric thresholds and qualitative boundaries are defined here.
+# The LLM never invents or alters thresholds.
+
+rules:
+  # Qualitative threshold definitions
+  growth:
+    strong_growth_pct: 15.0      # Growth > 15.0% is classified as "Strong"
+    moderate_growth_pct: 5.0     # Growth between 5.0% and 15.0% is "Moderate"
+    weak_growth_pct: 0.0         # Growth < 5.0% is "Weak / Negative"
+
+  profitability:
+    margin_expansion_direction: "positive"  # Expanded means margin_t > margin_t_minus_1
+
+  liquidity:
+    strong_current_ratio: 1.20   # Current ratio >= 1.20 is "Strong"
+    adequate_current_ratio: 1.00 # 1.00 - 1.19 is "Adequate"
+    weak_current_ratio: 1.00     # < 1.00 is "Weak / Poor"
+
+  leverage:
+    rising_debt_direction: "positive"  # Borrowings increased YoY
+    safe_debt_to_equity: 0.50
+
+  tolerances:
+    numeric_comparison_pct: 0.5  # 0.5% tolerance on recomputed numbers
+
+  staleness:
+    analysis_date: "2026-10-24"
+    guidance_max_age_months: 12
+    quarterly_max_age_months: 6
+
+  hierarchy:
+    authority_ranks:
+      audited_annual_report: 1
+      quarterly_financial_report: 2
+      earnings_press_release: 3
+      investor_presentation: 4
+
+  materiality:
+    conclusion_flip_weight: 40.0
+    relative_magnitude_weight: 30.0
+    severity_weights:
+      contradiction: 30.0
+      omission: 25.0
+      stale: 15.0
+      unsupported: 10.0
+      needs_review: 5.0
+
+  omission_checklist:
+    - id: "contingent_liabilities"
+      title: "Contingent Liabilities & Tax Disputes"
+      keywords: ["contingent liability", "tax dispute", "legal proceedings", "claims not acknowledged"]
+    - id: "related_party_transactions"
+      title: "Related Party Transactions & Promoter Loans"
+      keywords: ["related party", "promoter", "unsecured loan", "inter-corporate deposit"]
+    - id: "debt_maturity_covenants"
+      title: "Debt Maturity Profile & Covenants"
+      keywords: ["debt maturity", "covenant", "borrowing repayment", "default"]
+    - id: "auditor_qualifications"
+      title: "Auditor Qualifications & Emphasis of Matter"
+      keywords: ["emphasis of matter", "qualified opinion", "adverse opinion", "disclaimer"]
+    - id: "going_concern"
+      title: "Going Concern Assessment"
+      keywords: ["going concern", "material uncertainty"]
+    - id: "customer_concentration"
+      title: "Customer & Segment Concentration"
+      keywords: ["customer concentration", "single customer", "major customer", "revenue concentration"]
+    - id: "subsequent_events"
+      title: "Subsequent Events"
+      keywords: ["subsequent events", "events after reporting period", "balance sheet date"]
+    - id: "pledged_promoter_shares"
+      title: "Pledged Promoter Shares"
+      keywords: ["pledged shares", "encumbered shares", "promoter holding"]

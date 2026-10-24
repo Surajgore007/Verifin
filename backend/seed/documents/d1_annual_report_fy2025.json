@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "id": "D1",
+    "title": "Annual Report FY2025",
+    "type": "Audited Annual Report",
+    "publication_date": "2026-06-15",
+    "source_note": "Statutory Audited Financial Statements and Annual Report for Meridian Textiles Ltd",
+    "authority_rank": 1
+  },
+  "tables": [
+    {
+      "table_name": "Income Statement",
+      "page": 32,
+      "rows": [
+        {
+          "row_label": "Revenue from Operations",
+          "cells": [
+            { "id": "d1_c_rev_fy23", "column_label": "FY2023", "raw_value": "880.00", "parsed_value": 880.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d1_c_rev_fy24", "column_label": "FY2024", "raw_value": "1,000.00", "parsed_value": 1000.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d1_c_rev_fy25", "column_label": "FY2025", "raw_value": "1,120.00", "parsed_value": 1120.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        },
+        {
+          "row_label": "Net Profit after Tax",
+          "cells": [
+            { "id": "d1_c_pat_fy23", "column_label": "FY2023", "raw_value": "66.00", "parsed_value": 66.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d1_c_pat_fy24", "column_label": "FY2024", "raw_value": "80.00", "parsed_value": 80.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d1_c_pat_fy25", "column_label": "FY2025", "raw_value": "72.00", "parsed_value": 72.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        }
+      ]
+    },
+    {
+      "table_name": "Balance Sheet",
+      "page": 35,
+      "rows": [
+        {
+          "row_label": "Total Borrowings (Debt)",
+          "cells": [
+            { "id": "d1_c_debt_fy23", "column_label": "FY2023", "raw_value": "340.00", "parsed_value": 340.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d1_c_debt_fy24", "column_label": "FY2024", "raw_value": "400.00", "parsed_value": 400.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d1_c_debt_fy25", "column_label": "FY2025", "raw_value": "520.00", "parsed_value": 520.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        },
+        {
+          "row_label": "Shareholders Equity",
+          "cells": [
+            { "id": "d1_c_eq_fy23", "column_label": "FY2023", "raw_value": "540.00", "parsed_value": 540.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d1_c_eq_fy24", "column_label": "FY2024", "raw_value": "600.00", "parsed_value": 600.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d1_c_eq_fy25", "column_label": "FY2025", "raw_value": "640.00", "parsed_value": 640.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        },
+        {
+          "row_label": "Current Assets",
+          "cells": [
+            { "id": "d1_c_ca_fy23", "column_label": "FY2023", "raw_value": "480.00", "parsed_value": 480.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d1_c_ca_fy24", "column_label": "FY2024", "raw_value": "520.00", "parsed_value": 520.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d1_c_ca_fy25", "column_label": "FY2025", "raw_value": "540.00", "parsed_value": 540.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        },
+        {
+          "row_label": "Current Liabilities",
+          "cells": [
+            { "id": "d1_c_cl_fy23", "column_label": "FY2023", "raw_value": "400.00", "parsed_value": 400.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d1_c_cl_fy24", "column_label": "FY2024", "raw_value": "450.00", "parsed_value": 450.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d1_c_cl_fy25", "column_label": "FY2025", "raw_value": "600.00", "parsed_value": 600.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        }
+      ]
+    },
+    {
+      "table_name": "Cash Flow Summary",
+      "page": 38,
+      "rows": [
+        {
+          "row_label": "Cash Flow from Operating Activities",
+          "cells": [
+            { "id": "d1_c_ocf_fy24", "column_label": "FY2024", "raw_value": "110.00", "parsed_value": 110.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d1_c_ocf_fy25", "column_label": "FY2025", "raw_value": "85.00", "parsed_value": 85.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        },
+        {
+          "row_label": "Capital Expenditure (Capex)",
+          "cells": [
+            { "id": "d1_c_capex_fy25", "column_label": "FY2025", "raw_value": "150.00", "parsed_value": 150.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        }
+      ]
+    },
+    {
+      "table_name": "Employee Statistics",
+      "page": 52,
+      "rows": [
+        {
+          "row_label": "Total Permanent Headcount",
+          "cells": [
+            { "id": "d1_c_hc_fy24", "column_label": "FY2024", "raw_value": "3,900", "parsed_value": 3900.0, "unit": "employees", "period": "FY2024" },
+            { "id": "d1_c_hc_fy25", "column_label": "FY2025", "raw_value": "4,200", "parsed_value": 4200.0, "unit": "employees", "period": "FY2025" }
+          ]
+        }
+      ]
+    }
+  ],
+  "passages": [
+    {
+      "id": "d1_p_exec",
+      "page": 4,
+      "section": "Management Discussion and Analysis - Financial Performance",
+      "text": "For the fiscal year ended March 31, 2025, Meridian Textiles Ltd recorded statutory revenue from operations of INR 1,120 crore compared to INR 1,000 crore in FY2024, representing growth of 12.0%. Net profit after tax stood at INR 72 crore, compared to INR 80 crore in FY2024, with net margin contracting from 8.0% to 6.4% due to higher input raw material costs and increased interest charges."
+    },
+    {
+      "id": "d1_p_debt",
+      "page": 12,
+      "section": "Financial Position and Capital Structure",
+      "text": "Total borrowings expanded to INR 520 crore as of March 31, 2025, reflecting a 30% increase from INR 400 crore in the previous year, primarily driven by short-term working capital borrowings and equipment purchase loans. Shareholder equity closed at INR 640 crore compared to INR 600 crore in FY2024."
+    },
+    {
+      "id": "d1_p_liquidity",
+      "page": 15,
+      "section": "Liquidity and Working Capital",
+      "text": "Current assets at year-end were INR 540 crore against current liabilities of INR 600 crore, yielding a current ratio of 0.90. The tightening in working capital reflects extended debtor cycles and higher short-term trade payables."
+    },
+    {
+      "id": "d1_p_cashflow",
+      "page": 18,
+      "section": "Cash Flow Analysis",
+      "text": "Operating cash flow for FY2025 declined to INR 85 crore from INR 110 crore in FY2024. Capital expenditure of INR 150 crore was invested into automated weaving modernization."
+    },
+    {
+      "id": "d1_p_headcount",
+      "page": 24,
+      "section": "Human Resources and Operations",
+      "text": "Total permanent workforce reached 4,200 employees at the end of FY2025, compared to 3,900 employees in FY2024, supporting capacity ramp-up across technical textile lines."
+    },
+    {
+      "id": "d1_p_tax_dispute",
+      "page": 47,
+      "section": "Notes to Financial Statements - Note 27: Contingent Liabilities",
+      "text": "Note 27: Contingent Liabilities not provided for in the accounts include a disputed excise and corporate income tax demand of INR 85 crore pending adjudication before the High Court of Judicature. Based on independent legal counsel advice, the Company has contested the claim and made no provision in the financial statements."
+    },
+    {
+      "id": "d1_p_related_party",
+      "page": 49,
+      "section": "Notes to Financial Statements - Note 31: Related Party Disclosures",
+      "text": "Note 31: Related Party Transactions include an unsecured inter-corporate deposit loan of INR 40 crore extended during the fiscal year to Zenith Fabrics Private Limited, an enterprise controlled by the promoter directors. The loan carries an interest rate of 6.5% per annum with repayment terms subject to mutual determination."
+    },
+    {
+      "id": "d1_p_customer_conc",
+      "page": 50,
+      "section": "Notes to Financial Statements - Note 34: Customer Concentration",
+      "text": "Note 34: The Company has significant customer concentration with a single top overseas customer accounting for approximately 38% (INR 425.6 crore) of total revenue from operations for the year ended March 31, 2025."
+    },
+    {
+      "id": "d1_p_auditor_opinion",
+      "page": 28,
+      "section": "Independent Auditor's Report",
+      "text": "In our opinion and to the best of our information and according to the explanations given to us, the aforesaid standalone financial statements give the information required by the Act in the manner so required and give a true and fair view in conformity with the Indian Accounting Standards (Ind AS)."
+    }
+  ]
+}

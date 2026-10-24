@@ -1,0 +1,82 @@
+[
+  {
+    "sentence_index": 0,
+    "text_span": "Apple Inc. reported total revenue of $416.2 billion in FY2025 [1]",
+    "claim_type": "financial_metric",
+    "metric": "revenue",
+    "period": "FY2025",
+    "asserted_value": "$416.2 billion",
+    "stated_precision": "standard",
+    "source_citation_text": "1"
+  },
+  {
+    "sentence_index": 0,
+    "text_span": "reflecting solid top-line execution",
+    "claim_type": "strategic",
+    "metric": null,
+    "period": null,
+    "asserted_value": null,
+    "stated_precision": null,
+    "source_citation_text": "1"
+  },
+  {
+    "sentence_index": 1,
+    "text_span": "Gross margin reached about 46.9% [2]",
+    "claim_type": "financial_metric",
+    "metric": "gross_margin",
+    "period": null,
+    "asserted_value": "46.9%",
+    "stated_precision": "approximate",
+    "source_citation_text": "2"
+  },
+  {
+    "sentence_index": 1,
+    "text_span": "supported by high-margin Services growth",
+    "claim_type": "strategic",
+    "metric": null,
+    "period": null,
+    "asserted_value": null,
+    "stated_precision": null,
+    "source_citation_text": "2"
+  },
+  {
+    "sentence_index": 2,
+    "text_span": "Net profit margin expanded to 26.9% [2]",
+    "claim_type": "trend",
+    "metric": "net_margin",
+    "period": null,
+    "asserted_value": "26.9%",
+    "stated_precision": "standard",
+    "source_citation_text": "2"
+  },
+  {
+    "sentence_index": 2,
+    "text_span": "delivering diluted earnings per share of $7.46 [1]",
+    "claim_type": "financial_metric",
+    "metric": "diluted_eps",
+    "period": null,
+    "asserted_value": "$7.46",
+    "stated_precision": "standard",
+    "source_citation_text": "1"
+  },
+  {
+    "sentence_index": 3,
+    "text_span": "Operating cash flow reached $111.5 billion [1]",
+    "claim_type": "financial_metric",
+    "metric": "operating_cash_flow",
+    "period": null,
+    "asserted_value": "$111.5 billion",
+    "stated_precision": "standard",
+    "source_citation_text": "1"
+  },
+  {
+    "sentence_index": 3,
+    "text_span": "enabling continuous share repurchases despite working capital liabilities",
+    "claim_type": "risk_disclosure",
+    "metric": null,
+    "period": null,
+    "asserted_value": null,
+    "stated_precision": null,
+    "source_citation_text": "1"
+  }
+]

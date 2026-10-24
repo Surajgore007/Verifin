@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "id": "D2",
+    "title": "Earnings Press Release FY2025",
+    "type": "Earnings Press Release",
+    "publication_date": "2026-05-20",
+    "source_note": "Unaudited Press Release distributed to media and exchanges",
+    "authority_rank": 3
+  },
+  "tables": [
+    {
+      "table_name": "Quarter and Full Year Highlights",
+      "page": 1,
+      "rows": [
+        {
+          "row_label": "Revenue from Operations",
+          "cells": [
+            { "id": "d2_c_rev_fy25", "column_label": "FY2025", "raw_value": "1,180.00", "parsed_value": 1180.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        }
+      ]
+    }
+  ],
+  "passages": [
+    {
+      "id": "d2_p_headline",
+      "page": 1,
+      "section": "Press Release - Operational Highlights",
+      "text": "Meridian Textiles Ltd delivers robust operational momentum for FY2025: Total revenue grew 18% to reach INR 1,180 crore, demonstrating solid market share gains and expanded export dispatches across North America and Europe."
+    },
+    {
+      "id": "d2_p_commentary",
+      "page": 2,
+      "section": "Management Commentary",
+      "text": "Managing Director commented: 'Our strong revenue of INR 1,180 crore showcases the resilience of our integrated manufacturing ecosystem, driven by premium technical textiles and solid order visibility.'"
+    }
+  ]
+}

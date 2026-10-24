@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "id": "D6",
+    "title": "Q3 FY2025 Results Note",
+    "type": "Quarterly Financial Results",
+    "publication_date": "2026-01-15",
+    "source_note": "Financial Results for the Quarter ended December 31, 2025",
+    "authority_rank": 2
+  },
+  "tables": [
+    {
+      "table_name": "Quarterly Performance",
+      "page": 1,
+      "rows": [
+        {
+          "row_label": "Revenue from Operations",
+          "cells": [
+            { "id": "d6_c_rev_q3_25", "column_label": "Q3 FY2025", "raw_value": "290.00", "parsed_value": 290.0, "unit": "INR crore", "period": "Q3_FY2025" }
+          ]
+        },
+        {
+          "row_label": "Net Profit after Tax",
+          "cells": [
+            { "id": "d6_c_pat_q3_25", "column_label": "Q3 FY2025", "raw_value": "19.00", "parsed_value": 19.0, "unit": "INR crore", "period": "Q3_FY2025" }
+          ]
+        }
+      ]
+    }
+  ],
+  "passages": [
+    {
+      "id": "d6_p_overview",
+      "page": 1,
+      "section": "Quarterly Operational Review",
+      "text": "For the third fiscal quarter ended December 31, 2025, revenue from operations reached INR 290 crore with net profit after tax of INR 19 crore, reflecting seasonal festival procurement."
+    }
+  ]
+}

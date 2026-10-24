@@ -1,0 +1,61 @@
+{
+  "draft_id": "draft_b",
+  "label": "Live AI draft",
+  "badge": "Generated live by Groq (openai/gpt-oss-120b)",
+  "company_name": "Meridian Textiles Ltd",
+  "analysis_date": "2026-10-24",
+  "research_question": "Is Meridian Textiles financially healthy enough to be considered for a long-term holding? Summarise growth, profitability, liquidity, leverage and key risks.",
+  "full_text": "Meridian Textiles Ltd posted revenue of INR 1,120 crore in FY2025, up 12% from INR 1,000 crore in FY2024, indicating solid top-line growth. However, net profit fell to INR 72 crore, shrinking the net margin to 6.4% from 8.0% a year earlier, reflecting pressure from raw-material costs and higher interest expense. Total borrowings rose to INR 520 crore, a 30% increase, while shareholder equity reached INR 640 crore, modestly improving the leverage profile. The current ratio slipped to 0.90, underscoring tighter liquidity amid extended debtor cycles and higher short-term payables. Operating cash flow declined to INR 85 crore, below the INR 110 crore generated in FY2024, raising concerns about cash generation. The workforce expanded to 4,200 employees, supporting capacity upgrades in technical textile lines. A contingent tax dispute of INR 85 crore remains unresolved, representing a potential off-balance-sheet risk.",
+  "claims": [
+    {
+      "id": "b_c1",
+      "text_span": "Meridian Textiles Ltd posted revenue of INR 1,120 crore in FY2025, up 12% from INR 1,000 crore in FY2024",
+      "claim_type": "numeric",
+      "metric": "revenue",
+      "period": "FY2025",
+      "asserted_value": "INR 1,120 crore",
+      "sentence_index": 1,
+      "source_citation_text": "Annual Report FY2025"
+    },
+    {
+      "id": "b_c2",
+      "text_span": "net profit fell to INR 72 crore, shrinking the net margin to 6.4% from 8.0% a year earlier",
+      "claim_type": "numeric",
+      "metric": "net_margin",
+      "period": "FY2025",
+      "asserted_value": "6.4%",
+      "sentence_index": 2,
+      "source_citation_text": "Annual Report FY2025"
+    },
+    {
+      "id": "b_c3",
+      "text_span": "Total borrowings rose to INR 520 crore, a 30% increase",
+      "claim_type": "numeric",
+      "metric": "borrowings",
+      "period": "FY2025",
+      "asserted_value": "INR 520 crore",
+      "sentence_index": 3,
+      "source_citation_text": "Annual Report FY2025"
+    },
+    {
+      "id": "b_c4",
+      "text_span": "The current ratio slipped to 0.90",
+      "claim_type": "numeric",
+      "metric": "current_ratio",
+      "period": "FY2025",
+      "asserted_value": "0.90",
+      "sentence_index": 4,
+      "source_citation_text": "Annual Report FY2025"
+    },
+    {
+      "id": "b_c5",
+      "text_span": "The workforce expanded to 4,200 employees",
+      "claim_type": "numeric",
+      "metric": "headcount",
+      "period": "FY2025",
+      "asserted_value": "4,200",
+      "sentence_index": 6,
+      "source_citation_text": "Annual Report FY2025"
+    }
+  ]
+}

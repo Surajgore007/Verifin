@@ -1,0 +1,22 @@
+[
+  {
+    "topic": "revenue_trajectory",
+    "subquery": "total revenue net sales FY2023 FY2022 FY2021 year-over-year growth segment breakdown",
+    "description": "Top-line revenue trends and growth rates"
+  },
+  {
+    "topic": "gross_margin",
+    "subquery": "cost of goods sold gross profit gross margin percentage FY2023 FY2022 FY2021",
+    "description": "Gross profit and margin analysis"
+  },
+  {
+    "topic": "net_margin",
+    "subquery": "operating income net income earnings before tax net profit margin FY2023 FY2022 FY2021",
+    "description": "Net profitability and margin trends"
+  },
+  {
+    "topic": "debt_liquidity_risk",
+    "subquery": "total debt long-term debt short-term debt current ratio quick ratio cash and cash equivalents liquidity covenants",
+    "description": "Debt levels, liquidity ratios, and covenant compliance"
+  }
+]

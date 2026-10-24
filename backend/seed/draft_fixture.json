@@ -1,0 +1,131 @@
+{
+  "draft_id": "draft_a",
+  "label": "Controlled test draft",
+  "badge": "Planted-error draft, for a controlled test",
+  "company_name": "Meridian Textiles Ltd",
+  "analysis_date": "2026-10-24",
+  "research_question": "Is Meridian Textiles financially healthy enough to be considered for a long-term holding? Summarise growth, profitability, liquidity, leverage and key risks.",
+  "full_text": "Meridian Textiles Ltd presents an apparent picture of continuing operational expansion. Revenue grew 18% to 1,180 crore in FY2025, continuing steady momentum from FY2024 revenue of 1,000 crore. Net margins expanded year over year, with FY2025 net profit coming in at 72 crore. The company has reduced its debt through disciplined capital allocation, while operating cash flow was 85 crore, down from 110 crore in the preceding year. Furthermore, liquidity is strong, positioning the company well for working capital requirements. Total headcount reached 4,200 employees across technical textile divisions. Management has secured long-term financing for expansion, and management expects 20%+ annual growth over the medium term. In recent performance, latest quarterly revenue was 290 crore, while Q2 FY2026 revenue reached 285 crore.",
+  "claims": [
+    {
+      "id": "c1",
+      "text_span": "Revenue grew 18% to 1,180 crore in FY2025",
+      "claim_type": "numeric",
+      "metric": "revenue_growth_yoy",
+      "period": "FY2025",
+      "asserted_value": "18%",
+      "sentence_index": 1,
+      "source_citation_text": "Earnings Press Release FY2025"
+    },
+    {
+      "id": "c7a",
+      "text_span": "continuing steady momentum from FY2024 revenue of 1,000 crore",
+      "claim_type": "numeric",
+      "metric": "revenue",
+      "period": "FY2024",
+      "asserted_value": "1,000 crore",
+      "sentence_index": 1,
+      "source_citation_text": "Annual Report FY2025"
+    },
+    {
+      "id": "c2",
+      "text_span": "Net margins expanded year over year",
+      "claim_type": "directional",
+      "metric": "net_margin_expansion",
+      "period": "FY2025",
+      "asserted_value": "expanded",
+      "sentence_index": 2,
+      "source_citation_text": "Financial Summary"
+    },
+    {
+      "id": "c7b",
+      "text_span": "with FY2025 net profit coming in at 72 crore",
+      "claim_type": "numeric",
+      "metric": "net_profit",
+      "period": "FY2025",
+      "asserted_value": "72 crore",
+      "sentence_index": 2,
+      "source_citation_text": "Annual Report FY2025"
+    },
+    {
+      "id": "c3",
+      "text_span": "The company has reduced its debt",
+      "claim_type": "directional",
+      "metric": "borrowings_trend",
+      "period": "FY2025",
+      "asserted_value": "reduced",
+      "sentence_index": 3,
+      "source_citation_text": "Balance Sheet Highlights"
+    },
+    {
+      "id": "c7c",
+      "text_span": "operating cash flow was 85 crore, down from 110 crore in the preceding year",
+      "claim_type": "numeric",
+      "metric": "operating_cash_flow",
+      "period": "FY2025",
+      "asserted_value": "85 crore",
+      "sentence_index": 3,
+      "source_citation_text": "Annual Report FY2025"
+    },
+    {
+      "id": "c4",
+      "text_span": "liquidity is strong",
+      "claim_type": "qualitative",
+      "metric": "current_ratio_quality",
+      "period": "FY2025",
+      "asserted_value": "strong",
+      "sentence_index": 4,
+      "source_citation_text": "Working Capital Analysis"
+    },
+    {
+      "id": "c7d",
+      "text_span": "Total headcount reached 4,200 employees across technical textile divisions",
+      "claim_type": "numeric",
+      "metric": "headcount",
+      "period": "FY2025",
+      "asserted_value": "4,200",
+      "sentence_index": 5,
+      "source_citation_text": "Annual Report FY2025"
+    },
+    {
+      "id": "c5",
+      "text_span": "Management has secured long-term financing for expansion",
+      "claim_type": "existence",
+      "metric": "financing_secured",
+      "period": "FY2025",
+      "asserted_value": "secured",
+      "sentence_index": 6,
+      "source_citation_text": "Corporate Announcement"
+    },
+    {
+      "id": "c6",
+      "text_span": "management expects 20%+ annual growth over the medium term",
+      "claim_type": "forward_looking",
+      "metric": "guidance_growth",
+      "period": "FY2026",
+      "asserted_value": "20%+",
+      "sentence_index": 6,
+      "source_citation_text": "Investor Presentation FY2023"
+    },
+    {
+      "id": "c8",
+      "text_span": "latest quarterly revenue was 290 crore",
+      "claim_type": "numeric",
+      "metric": "quarterly_revenue",
+      "period": "Q3_FY2025",
+      "asserted_value": "290 crore",
+      "sentence_index": 7,
+      "source_citation_text": "Q3 FY2025 Results Note"
+    },
+    {
+      "id": "c7e",
+      "text_span": "Q2 FY2026 revenue reached 285 crore",
+      "claim_type": "numeric",
+      "metric": "quarterly_revenue",
+      "period": "Q2_FY2026",
+      "asserted_value": "285 crore",
+      "sentence_index": 7,
+      "source_citation_text": "Q2 FY2026 Results Note"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "topic": "growth",
+    "subquery": "Meridian Textiles total revenue and net sales year‑over‑year growth for the last three fiscal years; segment revenue trends and compound annual growth rate (CAGR)",
+    "description": "Top‑line expansion and segment performance"
+  },
+  {
+    "topic": "profitability",
+    "subquery": "Operating income, gross profit, net income, EBITDA and their respective margins (gross, operating, net) for the past three years; return on equity (ROE) and return on assets (ROA)",
+    "description": "Earnings generation and margin quality"
+  },
+  {
+    "topic": "liquidity_and_leverage",
+    "subquery": "Current assets vs. current liabilities, cash and cash equivalents, working capital, current ratio and quick ratio; total debt, long‑term debt, debt‑to‑equity, debt‑to‑EBITDA and interest coverage ratios",
+    "description": "Short‑term solvency and capital structure"
+  },
+  {
+    "topic": "risk_factors",
+    "subquery": "Item 1A risk factors: litigation, regulatory changes, supply‑chain and raw‑material price volatility, concentration of customers/suppliers, covenant compliance, going‑concern considerations, off‑balance‑sheet obligations",
+    "description": "Material risks and uncertainties"
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "id": "D5",
+    "title": "Historical Financial Summary FY2023-FY2025",
+    "type": "Structured Statement Table",
+    "publication_date": "2026-06-20",
+    "source_note": "Consolidated Multi-Year Statutory Financial Database",
+    "authority_rank": 1
+  },
+  "tables": [
+    {
+      "table_name": "Multi-Year Financial Trends",
+      "page": 1,
+      "rows": [
+        {
+          "row_label": "Revenue",
+          "cells": [
+            { "id": "d5_c_rev_23", "column_label": "FY2023", "raw_value": "880.00", "parsed_value": 880.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d5_c_rev_24", "column_label": "FY2024", "raw_value": "1000.00", "parsed_value": 1000.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d5_c_rev_25", "column_label": "FY2025", "raw_value": "1120.00", "parsed_value": 1120.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        },
+        {
+          "row_label": "Net Profit",
+          "cells": [
+            { "id": "d5_c_pat_23", "column_label": "FY2023", "raw_value": "66.00", "parsed_value": 66.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d5_c_pat_24", "column_label": "FY2024", "raw_value": "80.00", "parsed_value": 80.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d5_c_pat_25", "column_label": "FY2025", "raw_value": "72.00", "parsed_value": 72.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        },
+        {
+          "row_label": "Total Borrowings",
+          "cells": [
+            { "id": "d5_c_debt_23", "column_label": "FY2023", "raw_value": "340.00", "parsed_value": 340.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d5_c_debt_24", "column_label": "FY2024", "raw_value": "400.00", "parsed_value": 400.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d5_c_debt_25", "column_label": "FY2025", "raw_value": "520.00", "parsed_value": 520.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        },
+        {
+          "row_label": "Shareholder Equity",
+          "cells": [
+            { "id": "d5_c_eq_23", "column_label": "FY2023", "raw_value": "540.00", "parsed_value": 540.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d5_c_eq_24", "column_label": "FY2024", "raw_value": "600.00", "parsed_value": 600.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d5_c_eq_25", "column_label": "FY2025", "raw_value": "640.00", "parsed_value": 640.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        },
+        {
+          "row_label": "Current Assets",
+          "cells": [
+            { "id": "d5_c_ca_23", "column_label": "FY2023", "raw_value": "480.00", "parsed_value": 480.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d5_c_ca_24", "column_label": "FY2024", "raw_value": "520.00", "parsed_value": 520.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d5_c_ca_25", "column_label": "FY2025", "raw_value": "540.00", "parsed_value": 540.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        },
+        {
+          "row_label": "Current Liabilities",
+          "cells": [
+            { "id": "d5_c_cl_23", "column_label": "FY2023", "raw_value": "400.00", "parsed_value": 400.0, "unit": "INR crore", "period": "FY2023" },
+            { "id": "d5_c_cl_24", "column_label": "FY2024", "raw_value": "450.00", "parsed_value": 450.0, "unit": "INR crore", "period": "FY2024" },
+            { "id": "d5_c_cl_25", "column_label": "FY2025", "raw_value": "600.00", "parsed_value": 600.0, "unit": "INR crore", "period": "FY2025" }
+          ]
+        }
+      ]
+    }
+  ],
+  "passages": []
+}

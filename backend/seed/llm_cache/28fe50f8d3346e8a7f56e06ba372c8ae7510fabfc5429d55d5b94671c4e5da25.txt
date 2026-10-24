@@ -1,0 +1,42 @@
+[
+  {
+    "sentence_index": 0,
+    "text_span": "Apple Inc. reported total revenue of $416.2 billion in FY2025, reflecting solid growth.",
+    "claim_type": "financial_metric",
+    "metric": "revenue",
+    "period": "FY2025",
+    "asserted_value": "$416.2B",
+    "stated_precision": "standard",
+    "source_citation_text": null
+  },
+  {
+    "sentence_index": 1,
+    "text_span": "Gross margin reached about 46.9%",
+    "claim_type": "financial_metric",
+    "metric": "gross_margin",
+    "period": null,
+    "asserted_value": "46.9%",
+    "stated_precision": "approximate",
+    "source_citation_text": null
+  },
+  {
+    "sentence_index": 1,
+    "text_span": "net profit margin expanded to 26.9%",
+    "claim_type": "financial_metric",
+    "metric": "net_margin",
+    "period": null,
+    "asserted_value": "26.9%",
+    "stated_precision": "standard",
+    "source_citation_text": null
+  },
+  {
+    "sentence_index": 2,
+    "text_span": "Diluted earnings per share rose to $7.46.",
+    "claim_type": "financial_metric",
+    "metric": "diluted_eps",
+    "period": null,
+    "asserted_value": "$7.46",
+    "stated_precision": "standard",
+    "source_citation_text": null
+  }
+]

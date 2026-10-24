@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "id": "D3",
+    "title": "Q2 FY2026 Results Note",
+    "type": "Quarterly Financial Results",
+    "publication_date": "2026-10-14",
+    "source_note": "Reviewed Financial Results for the Quarter ended September 30, 2026",
+    "authority_rank": 2
+  },
+  "tables": [
+    {
+      "table_name": "Quarterly Performance",
+      "page": 1,
+      "rows": [
+        {
+          "row_label": "Revenue from Operations",
+          "cells": [
+            { "id": "d3_c_rev_q2_26", "column_label": "Q2 FY2026", "raw_value": "285.00", "parsed_value": 285.0, "unit": "INR crore", "period": "Q2_FY2026" }
+          ]
+        },
+        {
+          "row_label": "Net Profit after Tax",
+          "cells": [
+            { "id": "d3_c_pat_q2_26", "column_label": "Q2 FY2026", "raw_value": "15.00", "parsed_value": 15.0, "unit": "INR crore", "period": "Q2_FY2026" }
+          ]
+        }
+      ]
+    }
+  ],
+  "passages": [
+    {
+      "id": "d3_p_overview",
+      "page": 1,
+      "section": "Quarterly Summary",
+      "text": "Meridian Textiles Ltd reported standalone revenue from operations of INR 285 crore for the second quarter of FY2026 ended September 30, 2026. Net profit after tax for the quarter was INR 15 crore, supported by steady domestic volume absorption."
+    }
+  ]
+}

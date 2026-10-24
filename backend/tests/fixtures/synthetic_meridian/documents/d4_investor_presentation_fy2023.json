@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "id": "D4",
+    "title": "Investor Presentation FY2023",
+    "type": "Investor Presentation",
+    "publication_date": "2023-05-18",
+    "source_note": "Investor Presentation delivered at Annual Investor Meet May 2023",
+    "authority_rank": 4
+  },
+  "tables": [],
+  "passages": [
+    {
+      "id": "d4_p_guidance",
+      "page": 8,
+      "section": "Long-Term Strategic Outlook",
+      "text": "Management expects revenue growth of 20%+ annually through FY2026, driven by aggressive capacity commissioning in synthetic yarn spinning and expanding retail distributor reach across tier-2 cities."
+    },
+    {
+      "id": "d4_p_vision",
+      "page": 12,
+      "section": "Five-Year Roadmap",
+      "text": "Our Vision 2026 targets sustained margin enhancement through backward integration and sustained compound annual top-line growth of over 20 percent."
+    }
+  ]
+}

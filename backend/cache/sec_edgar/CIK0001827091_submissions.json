@@ -1,0 +1,103 @@
+{
+  "cik": "0001827091",
+  "entityType": "other",
+  "sic": "",
+  "sicDescription": "",
+  "ownerOrg": null,
+  "insiderTransactionForOwnerExists": 0,
+  "insiderTransactionForIssuerExists": 0,
+  "name": "Rented, Inc.",
+  "tickers": [],
+  "exchanges": [],
+  "ein": "844722227",
+  "lei": null,
+  "description": "",
+  "website": "",
+  "investorWebsite": "",
+  "category": "",
+  "fiscalYearEnd": "1231",
+  "stateOfIncorporation": "DE",
+  "stateOfIncorporationDescription": "DE",
+  "addresses": {
+    "mailing": {
+      "street1": "2577 MIDWAY ROAD",
+      "street2": null,
+      "city": "DECATUR",
+      "stateOrCountry": "GA",
+      "zipCode": "30030",
+      "stateOrCountryDescription": "GA",
+      "isForeignLocation": null,
+      "foreignStateTerritory": null,
+      "country": null,
+      "countryCode": null
+    },
+    "business": {
+      "street1": "2577 MIDWAY ROAD",
+      "street2": null,
+      "city": "DECATUR",
+      "stateOrCountry": "GA",
+      "zipCode": "30030",
+      "stateOrCountryDescription": "GA",
+      "isForeignLocation": null,
+      "foreignStateTerritory": null,
+      "country": null,
+      "countryCode": null
+    }
+  },
+  "phone": "4043226679",
+  "flags": "",
+  "formerNames": [],
+  "filings": {
+    "recent": {
+      "accessionNumber": [
+        "0001827091-20-000001"
+      ],
+      "filingDate": [
+        "2020-10-02"
+      ],
+      "reportDate": [
+        ""
+      ],
+      "acceptanceDateTime": [
+        "2020-10-02T16:34:59.000Z"
+      ],
+      "act": [
+        "33"
+      ],
+      "form": [
+        "D"
+      ],
+      "fileNumber": [
+        "021-376986"
+      ],
+      "filmNumber": [
+        "201218967"
+      ],
+      "items": [
+        "06b"
+      ],
+      "core_type": [
+        "D"
+      ],
+      "size": [
+        8009
+      ],
+      "isXBRL": [
+        0
+      ],
+      "isInlineXBRL": [
+        0
+      ],
+      "isXBRLNumeric": [
+        null
+      ],
+      "primaryDocument": [
+        "xslFormDX01/primary_doc.xml"
+      ],
+      "primaryDocDescription": [
+        ""
+      ]
+    },
+    "files": []
+  }
+}
