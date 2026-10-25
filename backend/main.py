@@ -49,8 +49,8 @@ sentinel_agent = SentinelAgent()
 devil_agent = DevilAgent()
 warden_agent = WardenAgent()
 
-active_company = "AAPL"
-active_draft_title = "Apple Inc. FY2025 Financial Review & Tie-Out"
+active_company = ""
+active_draft_title = ""
 active_draft_text = ""
 active_run_id: Optional[str] = None
 
@@ -175,33 +175,9 @@ def _load_current_case_snapshot() -> dict:
 
 @app.on_event("startup")
 async def startup_event():
-    global active_company, active_draft_text
     init_db()
-    conn = get_connection()
-    c = conn.cursor()
-    c.execute("SELECT COUNT(*) as cnt FROM documents")
-    cnt = c.fetchone()["cnt"]
-    conn.close()
-
-    if cnt == 0:
-        try:
-            ingest_sec_filing("AAPL", "10-K")
-            quant_agent.compute_all_metrics()
-        except Exception as e:
-            print(f"Startup ingest notice: {e}")
-
-    # Default draft for cold-start — gets overwritten on first real run
-    active_draft_text = (
-        "Apple Inc. reported total revenue of $416.2 billion in FY2025 [1], reflecting solid top-line execution. "
-        "Gross margin reached about 46.9% [2], supported by high-margin Services growth. "
-        "Net profit margin expanded to 26.9% [2], delivering diluted earnings per share of $7.46 [1]. "
-        "Operating cash flow reached $111.5 billion [1], enabling continuous share repurchases despite working capital liabilities."
-    )
-    extractor_agent.extract_claims(active_draft_text, "draft_current")
-    quant_agent.compute_all_metrics()
-    auditor_agent.run_auditor("draft_current")
-    sentinel_agent.run_omission_radar(active_draft_text, "draft_current")
-    devil_agent.run_debate(active_company)
+    # Clean live-first state: do not pre-populate or audit fake drafts on boot.
+    # Analysis is triggered live when the user submits a research query or pastes a draft.
 
 @app.get("/api/health")
 def health_check():
@@ -471,7 +447,8 @@ def get_current_case():
 
     conn.close()
 
-    risk_info = warden_agent.assess_risks("draft_current")
+    risk_info = warden_agent.assess_risks("draft_current") if len(claims) > 0 else {}
+    confidence = (risk_info.get("confidence") or risk_info.get("evidence_confidence")) if len(claims) > 0 else None
 
     return {
         "company": active_company,
@@ -486,13 +463,13 @@ def get_current_case():
         "flags": flags,
         "debates": debates,
         "xbrl_checks": xbrl_checks,
-        "confidence": risk_info.get("confidence") or risk_info.get("evidence_confidence", {"score": 85.0, "band_label": "High"}),
+        "confidence": confidence,
         "summary": {
             "total_statements": len(claims),
-            "verified_count": sum(1 for v in verdicts if v["verdict"] in ["Verified", "Supported"]),
-            "attention_count": sum(1 for v in verdicts if v["verdict"] not in ["Verified", "Supported"]),
+            "verified_count": sum(1 for v in verdicts if v.get("verdict") in ["Verified", "Supported"]),
+            "attention_count": sum(1 for v in verdicts if v.get("verdict") not in ["Verified", "Supported"]),
             "conflicts_count": len(conflicts),
-            "omissions_count": sum(1 for o in omissions if "OMITTED" in o["status"] or "Disclosed but" in o["status"])
+            "omissions_count": sum(1 for o in omissions if "OMITTED" in str(o.get("status", "")) or "Disclosed but" in str(o.get("status", "")))
         }
     }
 

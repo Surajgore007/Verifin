@@ -153,7 +153,7 @@ class SelfTestEngine:
 
         total = len(rows)
         caught = sum(1 for r in rows if r["caught"] == 1)
-        rate = round((caught / total * 100.0), 1) if total > 0 else 80.0
+        rate = round((caught / total * 100.0), 1) if total > 0 else 0.0
 
         return {
             "total_injections": total,

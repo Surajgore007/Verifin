@@ -23,8 +23,17 @@ interface ConfidenceRingProps {
 export const ConfidenceRing: React.FC<ConfidenceRingProps> = ({ confidence }) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
-  const score = confidence?.score ?? 0;
-  const bandLabel = confidence?.band_label ?? (score < 20 ? "Low, do not rely" : score >= 80 ? "High Confidence" : "Moderate");
+  if (!confidence || confidence.score === undefined || confidence.score === null) {
+    return (
+      <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-400 font-medium select-none">
+        <span className="w-2 h-2 rounded-full bg-slate-300"></span>
+        <span>Evidence Trust: Awaiting Run</span>
+      </div>
+    );
+  }
+
+  const score = confidence.score;
+  const bandLabel = confidence.band_label ?? (score < 20 ? "Low, do not rely" : score >= 80 ? "High Confidence" : "Moderate");
   
   // Palette for light theme
   const getColors = () => {

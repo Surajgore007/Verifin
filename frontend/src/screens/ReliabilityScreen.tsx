@@ -221,7 +221,7 @@ export const ReliabilityScreen: React.FC = () => {
           </div>
 
           {/* Aggregate Stats Bar */}
-          {selfTestStats && (
+          {selfTestStats && selfTestStats.total_injections > 0 ? (
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200/80">
               <div>
                 <div className="text-[10px] text-slate-400 font-semibold uppercase">Detection Rate</div>
@@ -247,6 +247,10 @@ export const ReliabilityScreen: React.FC = () => {
                   {selfTestStats.false_positive_rate_pct}%
                 </div>
               </div>
+            </div>
+          ) : (
+            <div className="p-4 bg-slate-50 rounded-xl border border-dashed border-slate-200 text-center text-xs text-slate-500">
+              No fault injections run yet. Click <span className="font-semibold text-slate-700">"Inject Random Fault"</span> or choose a mutation above to test the auditor in real time.
             </div>
           )}
 
