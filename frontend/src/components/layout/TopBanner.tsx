@@ -1,6 +1,25 @@
 import React, { useState } from "react";
 import { ConfidenceRing } from "../ui/ConfidenceRing";
-import { Download, FileSpreadsheet, FileText, FileCode, Check, ShieldAlert } from "lucide-react";
+import {
+  Download,
+  FileSpreadsheet,
+  FileText,
+  FileCode,
+  ShieldAlert,
+  Zap,
+  History,
+  Clock,
+  Cpu,
+} from "lucide-react";
+
+interface RunProvenance {
+  run_id: string | null;
+  timestamp: string | null;
+  model: string | null;
+  is_live: boolean;
+  is_replay: boolean;
+  duration_ms?: number;
+}
 
 interface TopBannerProps {
   confidence?: any;
@@ -14,6 +33,7 @@ interface TopBannerProps {
     conflicts_count: number;
     omissions_count: number;
   };
+  runProvenance?: RunProvenance;
 }
 
 export const TopBanner: React.FC<TopBannerProps> = ({
@@ -21,21 +41,71 @@ export const TopBanner: React.FC<TopBannerProps> = ({
   activeCompany,
   onExport,
   onOpenReview,
-  summaryStats
+  summaryStats,
+  runProvenance,
 }) => {
   const [showExportMenu, setShowExportMenu] = useState(false);
 
+  const hasRun = !!runProvenance?.run_id;
+  const isReplay = runProvenance?.is_replay;
+  const isLive = runProvenance?.is_live && !isReplay;
+
   return (
     <header className="sticky top-0 z-20 bg-white border-b border-slate-200">
-      {/* Permanent Regulatory Compliance Bar */}
-      <div className="bg-slate-50 border-b border-slate-200/80 px-6 py-1 text-[11px] text-slate-500 flex items-center justify-between">
-        <div className="flex items-center gap-1.5 font-medium text-slate-700">
-          <ShieldAlert className="w-3.5 h-3.5 text-amber-600" />
-          <span>Decision support only, not investment advice. Numbers recomputed in deterministic Python Fact Ledger.</span>
+      {/* Regulatory + Provenance Bar */}
+      <div className="bg-slate-50 border-b border-slate-200/80 px-6 py-1 text-[11px] flex items-center justify-between gap-4 flex-wrap">
+        <div className="flex items-center gap-1.5 font-medium text-slate-600">
+          <ShieldAlert className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+          <span>Decision support only, not investment advice.</span>
         </div>
-        <div className="font-medium text-slate-400">
-          Tagline: <span className="text-slate-600 font-semibold">AI proposes. Evidence decides. Humans approve.</span>
-        </div>
+
+        {/* Provenance strip — always visible once a run exists */}
+        {hasRun ? (
+          <div className="flex items-center gap-3 font-mono text-[10px]">
+            {/* Live vs Replay badge */}
+            {isReplay ? (
+              <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100 border border-amber-300 text-amber-800 font-bold">
+                <History className="w-2.5 h-2.5" />
+                REPLAY
+              </span>
+            ) : (
+              <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 font-bold">
+                <Zap className="w-2.5 h-2.5" />
+                LIVE
+              </span>
+            )}
+
+            {/* Run ID */}
+            <span className="text-slate-500">
+              Run <span className="text-slate-800 font-semibold">{runProvenance.run_id}</span>
+            </span>
+
+            {/* Timestamp */}
+            {runProvenance.timestamp && (
+              <span className="flex items-center gap-1 text-slate-500">
+                <Clock className="w-2.5 h-2.5" />
+                {new Date(runProvenance.timestamp).toLocaleTimeString()}
+              </span>
+            )}
+
+            {/* Model */}
+            {runProvenance.model && (
+              <span className="flex items-center gap-1 text-slate-500">
+                <Cpu className="w-2.5 h-2.5" />
+                {runProvenance.model}
+              </span>
+            )}
+
+            {/* Duration */}
+            {runProvenance.duration_ms && (
+              <span className="text-slate-400">{(runProvenance.duration_ms / 1000).toFixed(1)}s</span>
+            )}
+          </div>
+        ) : (
+          <div className="text-[10px] text-slate-400 font-mono italic">
+            No run yet — submit a question to start
+          </div>
+        )}
       </div>
 
       {/* Main Bar */}
@@ -46,14 +116,14 @@ export const TopBanner: React.FC<TopBannerProps> = ({
             <span className="font-bold text-sm text-slate-900">{activeCompany}</span>
             <span className="text-xs text-slate-400">|</span>
             <span className="text-xs text-slate-600 font-medium">
-              {summaryStats?.total_statements ?? 0} statements analyzed:
+              {summaryStats?.total_statements ?? 0} statements:
             </span>
             <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
               {summaryStats?.verified_count ?? 0} verified
             </span>
             {(summaryStats?.attention_count ?? 0) > 0 && (
               <span className="text-xs font-semibold text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200">
-                {summaryStats?.attention_count} need attention
+                {summaryStats?.attention_count} flagged
               </span>
             )}
           </div>
@@ -63,7 +133,7 @@ export const TopBanner: React.FC<TopBannerProps> = ({
               onClick={onOpenReview}
               className="ml-2 px-3 py-1 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium rounded-lg shadow-xs transition-colors flex items-center gap-1.5 cursor-pointer"
             >
-              <span>Review flagged items</span>
+              Review flagged items
             </button>
           )}
         </div>
@@ -83,7 +153,7 @@ export const TopBanner: React.FC<TopBannerProps> = ({
 
             {showExportMenu && (
               <div
-                className="absolute right-0 top-full mt-1.5 w-48 bg-white border border-slate-200 rounded-xl shadow-lg z-50 py-1.5 animate-in fade-in slide-in-from-top-1 text-xs"
+                className="absolute right-0 top-full mt-1.5 w-48 bg-white border border-slate-200 rounded-xl shadow-lg z-50 py-1.5 text-xs"
                 onMouseLeave={() => setShowExportMenu(false)}
               >
                 <div className="px-3 py-1 text-[10px] uppercase font-semibold text-slate-400 tracking-wider">
@@ -91,7 +161,7 @@ export const TopBanner: React.FC<TopBannerProps> = ({
                 </div>
                 <button
                   onClick={() => { onExport("xlsx"); setShowExportMenu(false); }}
-                  className="w-full flex items-center gap-2.5 px-3 py-2 text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+                  className="w-full flex items-center gap-2.5 px-3 py-2 text-slate-700 hover:bg-slate-50 transition-colors"
                 >
                   <FileSpreadsheet className="w-4 h-4 text-emerald-600" />
                   <div className="text-left">
@@ -101,7 +171,7 @@ export const TopBanner: React.FC<TopBannerProps> = ({
                 </button>
                 <button
                   onClick={() => { onExport("docx"); setShowExportMenu(false); }}
-                  className="w-full flex items-center gap-2.5 px-3 py-2 text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+                  className="w-full flex items-center gap-2.5 px-3 py-2 text-slate-700 hover:bg-slate-50 transition-colors"
                 >
                   <FileText className="w-4 h-4 text-blue-600" />
                   <div className="text-left">
@@ -111,7 +181,7 @@ export const TopBanner: React.FC<TopBannerProps> = ({
                 </button>
                 <button
                   onClick={() => { onExport("md"); setShowExportMenu(false); }}
-                  className="w-full flex items-center gap-2.5 px-3 py-2 text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+                  className="w-full flex items-center gap-2.5 px-3 py-2 text-slate-700 hover:bg-slate-50 transition-colors"
                 >
                   <FileCode className="w-4 h-4 text-indigo-600" />
                   <div className="text-left">

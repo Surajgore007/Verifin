@@ -263,6 +263,33 @@ def init_db(db_path: str = DB_PATH):
         notes TEXT NOT NULL,
         timestamp TEXT NOT NULL
     );
+
+    CREATE TABLE IF NOT EXISTS run_records (
+        id TEXT PRIMARY KEY,
+        timestamp TEXT NOT NULL,
+        company TEXT NOT NULL,
+        question TEXT,
+        model_name TEXT NOT NULL,
+        edgar_live INTEGER DEFAULT 1,
+        llm_live INTEGER DEFAULT 1,
+        duration_ms INTEGER,
+        claims_count INTEGER DEFAULT 0,
+        verified_count INTEGER DEFAULT 0,
+        attention_count INTEGER DEFAULT 0,
+        confidence_score REAL DEFAULT 0,
+        confidence_band TEXT DEFAULT 'Unknown',
+        is_replay INTEGER DEFAULT 0,
+        replay_source_id TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS replay_bundles (
+        id TEXT PRIMARY KEY,
+        run_id TEXT NOT NULL,
+        label TEXT NOT NULL,
+        created_at TEXT NOT NULL,
+        bundle_json TEXT NOT NULL,
+        FOREIGN KEY(run_id) REFERENCES run_records(id)
+    );
     """)
 
     conn.commit()

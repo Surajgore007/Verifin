@@ -19,7 +19,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
   isLoading
 }) => {
   const [mode, setMode] = useState<"query" | "paste">("query");
-  const [question, setQuestion] = useState("Analyze revenue trajectory, gross and net margins, and debt/liquidity risks in the latest 10-K filing.");
+  const [question, setQuestion] = useState("");
   const [draftText, setDraftText] = useState("");
   const [draftTitle, setDraftTitle] = useState("Draft Analyst Memo");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);

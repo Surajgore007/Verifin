@@ -1,15 +1,14 @@
 import React from "react";
-import { 
-  PlusCircle, 
-  Files, 
-  LayoutTemplate, 
-  History, 
-  ShieldCheck, 
-  Activity, 
-  ChevronLeft, 
+import {
+  PlusCircle,
+  Files,
+  LayoutTemplate,
+  ShieldCheck,
+  Activity,
+  ChevronLeft,
   ChevronRight,
   Search,
-  Sparkles
+  Settings,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -20,6 +19,7 @@ interface SidebarProps {
   onOpenActivityDrawer: () => void;
   activityCount: number;
   activeCompany: string;
+  onSettingsClick?: () => void;
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -29,70 +29,85 @@ export const Sidebar: React.FC<SidebarProps> = ({
   setCollapsed,
   onOpenActivityDrawer,
   activityCount,
-  activeCompany
+  activeCompany,
+  onSettingsClick,
 }) => {
   const navItems = [
     { id: "home", label: "New Research", icon: PlusCircle },
     { id: "research", label: "Research & Tie-Out", icon: Search },
     { id: "documents", label: "Documents & Filings", icon: Files },
-    { id: "report", label: "Final Report & Sign-Off", icon: LayoutTemplate },
+    { id: "report", label: "Final Report", icon: LayoutTemplate },
     { id: "reliability", label: "Reliability & Benchmarks", icon: ShieldCheck },
   ];
 
+  // Patch E: 64px when collapsed (icon rail), 240px when expanded
   return (
     <aside
       className={`h-screen sticky top-0 bg-white border-r border-slate-200 transition-all duration-200 flex flex-col z-30 ${
-        collapsed ? "w-16" : "w-64"
+        collapsed ? "w-16" : "w-60"
       }`}
     >
       {/* Brand Header */}
-      <div className="h-16 px-4 flex items-center justify-between border-b border-slate-100">
+      <div className={`h-14 flex items-center border-b border-slate-100 ${collapsed ? "justify-center px-0" : "px-3 justify-between"}`}>
         {!collapsed && (
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-base shadow-xs">
+          <div className="flex items-center gap-2 min-w-0">
+            <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-xs shrink-0">
               V
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col min-w-0">
               <span className="font-bold text-slate-900 text-sm tracking-tight flex items-center gap-1.5">
                 Verifin
-                <span className="text-[10px] font-semibold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100">
+                <span className="text-[9px] font-semibold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100">
                   v2.0
                 </span>
               </span>
-              <span className="text-[11px] text-slate-500 font-medium">Financial Tie-Out System</span>
+              <span className="text-[10px] text-slate-500 font-medium truncate">Tie-Out System</span>
             </div>
           </div>
         )}
         {collapsed && (
-          <div className="w-8 h-8 mx-auto rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-base">
+          <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-xs">
             V
           </div>
         )}
 
-        <button
-          onClick={() => setCollapsed(!collapsed)}
-          className="p-1.5 rounded-md hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
-          title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-        >
-          {collapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
-        </button>
+        {!collapsed && (
+          <button
+            onClick={() => setCollapsed(true)}
+            className="p-1.5 rounded-md hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
+            title="Collapse sidebar"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+        )}
       </div>
 
-      {/* Active Context Banner */}
+      {/* Expand button when collapsed */}
+      {collapsed && (
+        <button
+          onClick={() => setCollapsed(false)}
+          className="mt-2 mx-auto p-1.5 rounded-md hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
+          title="Expand sidebar"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+      )}
+
+      {/* Active Context Banner — only expanded */}
       {!collapsed && (
-        <div className="px-4 py-3 bg-slate-50 border-b border-slate-100">
-          <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 mb-1">Target Entity</div>
+        <div className="px-3 py-2.5 bg-slate-50 border-b border-slate-100">
+          <div className="text-[9px] uppercase tracking-wider font-bold text-slate-400 mb-0.5">Entity</div>
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-800">{activeCompany}</span>
-            <span className="text-[10px] text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-medium border border-emerald-200">
-              SEC 10-K Ingested
+            <span className="text-[9px] text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-semibold border border-emerald-200">
+              10-K
             </span>
           </div>
         </div>
       )}
 
-      {/* Nav Navigation */}
-      <nav className="flex-1 px-2.5 py-4 space-y-1 overflow-y-auto">
+      {/* Navigation */}
+      <nav className="flex-1 px-2 py-3 space-y-0.5 overflow-y-auto">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = currentView === item.id;
@@ -100,38 +115,59 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               key={item.id}
               onClick={() => setCurrentView(item.id)}
-              className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
+              title={item.label}
+              className={`w-full flex items-center gap-2.5 rounded-lg text-xs font-medium transition-colors ${
+                collapsed ? "justify-center p-2.5" : "px-3 py-2"
+              } ${
                 isActive
-                  ? "bg-indigo-50 text-indigo-700 font-semibold"
+                  ? "bg-indigo-50 text-indigo-700"
                   : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
               }`}
-              title={collapsed ? item.label : undefined}
             >
-              <Icon className={`w-4 h-4 shrink-0 ${isActive ? "text-indigo-600" : "text-slate-400"}`} />
+              <Icon
+                className={`w-4 h-4 shrink-0 ${isActive ? "text-indigo-600" : "text-slate-400"}`}
+              />
               {!collapsed && <span>{item.label}</span>}
             </button>
           );
         })}
       </nav>
 
-      {/* Multi-Agent Activity Drawer Button */}
-      <div className="p-3 border-t border-slate-100">
+      {/* Bottom: Activity + Settings */}
+      <div className={`border-t border-slate-100 p-2 space-y-1`}>
         <button
           onClick={onOpenActivityDrawer}
-          className={`w-full flex items-center justify-between px-3 py-2 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-colors ${
-            collapsed ? "justify-center" : ""
+          title="Multi-Agent Activity"
+          className={`w-full flex items-center rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 text-xs text-slate-700 transition-colors relative ${
+            collapsed ? "justify-center p-2.5" : "px-3 py-2 justify-between"
           }`}
-          title="Multi-Agent Activity Drawer"
         >
           <div className="flex items-center gap-2">
-            <Activity className="w-4 h-4 text-indigo-600 animate-pulse" />
-            {!collapsed && <span className="font-medium">Multi-Agent Activity</span>}
+            <Activity className="w-4 h-4 text-indigo-500 animate-pulse shrink-0" />
+            {!collapsed && <span className="font-medium text-xs">Agent Activity</span>}
           </div>
-          {!collapsed && (
-            <span className="text-[10px] font-semibold bg-white px-1.5 py-0.5 rounded-full border border-slate-200 tabular-nums">
-              {activityCount} msgs
+          {!collapsed && activityCount > 0 && (
+            <span className="text-[10px] font-bold bg-white px-1.5 py-0.5 rounded-full border border-slate-200 tabular-nums">
+              {activityCount}
             </span>
           )}
+          {collapsed && activityCount > 0 && (
+            <span className="absolute -top-1 -right-1 w-4 h-4 bg-indigo-600 rounded-full text-[9px] text-white font-bold flex items-center justify-center">
+              {activityCount > 9 ? "9+" : activityCount}
+            </span>
+          )}
+        </button>
+
+        {/* Settings button — 5 clicks unlocks replay */}
+        <button
+          onClick={onSettingsClick}
+          title="Settings"
+          className={`w-full flex items-center rounded-lg text-xs text-slate-500 hover:bg-slate-50 hover:text-slate-700 transition-colors ${
+            collapsed ? "justify-center p-2.5" : "px-3 py-2 gap-2"
+          }`}
+        >
+          <Settings className="w-3.5 h-3.5 shrink-0" />
+          {!collapsed && <span>Settings</span>}
         </button>
       </div>
     </aside>
